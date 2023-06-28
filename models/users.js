@@ -8,16 +8,20 @@ const User = db.define("user", {
     allowNull: false,
     primaryKey: true,
   },
-  name: Sequelize.STRING,
-  email: Sequelize.STRING,
+  username: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    unique: true,
+  },
   password: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  firstName: Sequelize.STRING,
-  lastName: Sequelize.STRING,
-  phone: Sequelize.STRING,
-  address: Sequelize.STRING,
 });
 
 module.exports = User;
