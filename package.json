@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "init-sequelize": "sequelize init",
     "migrate": "sequelize db:migrate",
-    "start": "npm run migrate && node index.js"
+    "start": "npm run init-sequelize && npm run migrate && node index.js"
   },
   "keywords": [],
   "author": "",
