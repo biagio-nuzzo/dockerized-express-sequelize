@@ -37,6 +37,8 @@ To get this project up and running on your local machine, follow these steps:
 
    ```bash
    git clone https://github.com/biagio-nuzzo/dockerized-expressjs-sequelize.git
+   or
+   git@github.com:biagio-nuzzo/dockerized-express-sequelize.git
    ```
 
 2. Navigate to the project directory:
