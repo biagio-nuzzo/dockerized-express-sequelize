@@ -46,8 +46,10 @@ To get this project up and running on your local machine, follow these steps:
    ```
 
 3. Set the required environment variables as mentioned above.
+   ```base
+   mv sample.env .env
 
-4. Run the following command to set up the project:
+5. Run the following command to set up the project:
 
    ```bash
    ./dev_stack.sh
@@ -55,7 +57,7 @@ To get this project up and running on your local machine, follow these steps:
 
    This script will handle the setup process for you.
 
-5. Once the setup is complete the server should now be running on [http://localhost:8000](http://localhost:8000) or the port you specified in the environment variable `NODE_SERVER_PORT`) to see the application in action! :tada:
+6. Once the setup is complete the server should now be running on [http://localhost:8000](http://localhost:8000) or the port you specified in the environment variable `NODE_SERVER_PORT`) to see the application in action! :tada:
 
 ## Usage :hammer_and_wrench:
 
