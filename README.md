@@ -55,13 +55,7 @@ To get this project up and running on your local machine, follow these steps:
 
    This script will handle the setup process for you.
 
-5. Once the setup is complete, you can start the backend server:
-
-   ```bash
-   docker-compose up
-   ```
-
-   The server should now be running on [http://localhost:8000](http://localhost:8000).
+5. Once the setup is complete the server should now be running on [http://localhost:8000](http://localhost:8000) or the port you specified in the environment variable `NODE_SERVER_PORT`) to see the application in action! :tada:
 
 ## Usage :hammer_and_wrench:
 
