@@ -42,7 +42,7 @@ To get this project up and running on your local machine, follow these steps:
 2. Navigate to the project directory:
 
    ```bash
-   cd dockerized-expressjs-sequelize
+   cd dockerized-express-sequelize
    ```
 
 3. Set the required environment variables as mentioned above.
