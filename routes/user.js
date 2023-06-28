@@ -1,4 +1,4 @@
-const api = require("../api/users");  // Import the controller module for handling user-related requests
+const api = require("../api/user");  // Import the controller module for handling user-related requests
 const router = require("express").Router();  // Import the Router module from Express
 
 // CRUD Routes /users

@@ -12,4 +12,17 @@ const sequelize = new Sequelize(
   }
 );
 
+// Synchronize Sequelize models with the database and start the server
+// Calling "sequelize.sync()" creates or updates database tables based on defined models
+// Once the synchronization is successful, the server starts listening on port 8000
+sequelize
+  .sync()
+  .then((result) => {
+    console.log("Sequelize models synced with PostgreSQL database");
+  })
+  .catch((err) => {
+    console.log("An error occurred while creating the database tables:");
+    console.log(err);
+  });
+
 module.exports = sequelize; // Export the Sequelize instance for database operations

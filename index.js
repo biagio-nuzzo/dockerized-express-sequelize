@@ -21,16 +21,19 @@ app.use(express.json());
 // Use the "sequelize" object to define models and perform database operations
 const sequelize = require("./util/database");
 
-// Synchronize Sequelize models with the database and start the server
-// Calling "sequelize.sync()" creates or updates database tables based on defined models
-// Once the synchronization is successful, the server starts listening on port 8000
+// Test the database connection
 sequelize
-  .sync()
-  .then((result) => {
-    console.log("Database connected");
-    app.listen(process.env.NODE_SERVER_PORT || 8000);
+  .authenticate()
+  .then(() => {
+    console.log("Connected to the database!");
+    app.listen(8000, () => {
+      console.log("Server started on port 8000");
+    });
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log("Cannot connect to the database!");
+    console.log(err);
+  });
 //////////// END DATABASE
 
 //////////// MODELS
@@ -38,7 +41,7 @@ sequelize
 // Define Sequelize models
 // These models represent the database tables and their relationships
 // Sequelize uses these models to synchronize the database schema
-const User = require("./models/users");
+const User = require("./models/user");
 //////////////////////////////////////////////// END MODELS
 
 //////////////////////////////////////////////// CORS
@@ -98,6 +101,7 @@ app.get("/", (req, res, next) => {
   res.sendFile(__dirname + "/steps/step2.html");
 });
 
-//CRUD routes
-app.use("/users", require("./routes/users"));
-//////////////////////////////////////////////// ROUTES
+// Create routes for api under /api
+app.use("/api/users", require("./routes/user"));
+app.use("/api/auth/", require("./routes/auth"));
+//////////////////////////////////////////////// END ROUTES
