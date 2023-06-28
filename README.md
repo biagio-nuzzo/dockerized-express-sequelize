@@ -1,12 +1,12 @@
-# dockerized-expressjs-sequelize :rocket:
+# dockerized-express-sequelize :rocket:
 
-Welcome to the **dockerized-expressjs-sequelize** repository! :wave: This project is a backend application built with Node.js and Express.js. It utilizes Sequelize as the ORM (Object-Relational Mapping) tool for managing the database. The entire project is dockerized, with Docker working seamlessly with the backend container and the PostgreSQL database daemon. :whale:
+Welcome to the **dockerized-express-sequelize** repository! :wave: This project is a backend application built with Node.js and Express.js. It utilizes Sequelize as the ORM (Object-Relational Mapping) tool for managing the database. The entire project is dockerized, with Docker working seamlessly with the backend container and the PostgreSQL database daemon. :whale:
 
 ## Project Information :information_source:
 
 - Description: This project is a backend application developed in Node.js using Express.js as the framework. Sequelize is implemented as the ORM tool for efficient database management. The project is fully dockerized, with Docker managing the backend container and the PostgreSQL database daemon.
 - Technologies: Node.js, Express.js, Sequelize, Docker, PostgreSQL
-- Project Name: dockerized-expressjs-sequelize
+- Project Name: dockerized-express-sequelize
 
 ## Prerequisites :wrench:
 
@@ -36,18 +36,21 @@ To get this project up and running on your local machine, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/dockerized-expressjs-sequelize.git
+   git clone https://github.com/biagio-nuzzo/dockerized-express-sequelize.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd dockerized-expressjs-sequelize
+   cd dockerized-express-sequelize
    ```
 
 3. Set the required environment variables as mentioned above.
+   ```base
+   mv sample.env .env
+   ```
 
-4. Run the following command to set up the project:
+5. Run the following command to set up the project:
 
    ```bash
    ./dev_stack.sh
@@ -55,7 +58,7 @@ To get this project up and running on your local machine, follow these steps:
 
    This script will handle the setup process for you.
 
-5. Once the setup is complete the server should now be running on [http://localhost:8000](http://localhost:8000) or the port you specified in the environment variable `NODE_SERVER_PORT`) to see the application in action! :tada:
+6. Once the setup is complete the server should now be running on [http://localhost:8000](http://localhost:8000) or the port you specified in the environment variable `NODE_SERVER_PORT`) to see the application in action! :tada:
 
 ## Usage :hammer_and_wrench:
 
