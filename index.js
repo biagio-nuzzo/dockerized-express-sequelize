@@ -94,10 +94,10 @@ app.use(helmet());
 
 // Modify the response message or add additional logic as needed for your application.
 app.get("/", (req, res, next) => {
-  res.send("Hello World");
+  // serve the file steps/step2.html
+  res.sendFile(__dirname + "/steps/step2.html");
 });
 
 //CRUD routes
 app.use("/users", require("./routes/users"));
 //////////////////////////////////////////////// ROUTES
-
