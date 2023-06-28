@@ -20,17 +20,6 @@ app.use(express.json());
 // Sequelize is an ORM for interacting with the database
 // Use the "sequelize" object to define models and perform database operations
 const sequelize = require("./util/database");
-
-// Synchronize Sequelize models with the database and start the server
-// Calling "sequelize.sync()" creates or updates database tables based on defined models
-// Once the synchronization is successful, the server starts listening on port 8000
-sequelize
-  .sync()
-  .then((result) => {
-    console.log("Database connected");
-    app.listen(process.env.NODE_SERVER_PORT || 8000);
-  })
-  .catch((err) => console.log(err));
 //////////// END DATABASE
 
 //////////// MODELS
@@ -98,6 +87,7 @@ app.get("/", (req, res, next) => {
   res.sendFile(__dirname + "/steps/step2.html");
 });
 
-//CRUD routes
-app.use("/users", require("./routes/user"));
-//////////////////////////////////////////////// ROUTES
+// Create routes for api under /api
+app.use("/api/users", require("./routes/user"));
+app.use("/api/auth/", require("./routes/auth"));
+//////////////////////////////////////////////// END ROUTES
