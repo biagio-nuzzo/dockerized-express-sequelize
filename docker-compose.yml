@@ -15,6 +15,9 @@ services:
     depends_on:
       - node_db
     command: npm run start
+    volumes:
+      - node_app_data:/usr/src/app/
+
 
   node_db:
     container_name: node_db
@@ -29,4 +32,6 @@ services:
       - node_db_data:/var/lib/postgresql/data
 
 volumes:
+  # node_app data
+  node_app_data: {}
   node_db_data: {}

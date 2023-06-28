@@ -27,6 +27,7 @@ const User = db.define("user", {
     type: Sequelize.STRING, // Data type is STRING
     allowNull: false, // Password cannot be null
   },
+  freezeTableName: true, // Model tableName will be the same as the model name
 });
 
 module.exports = User; // Export the User model for querying and manipulating user data
