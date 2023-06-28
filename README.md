@@ -12,9 +12,9 @@ Welcome to the **dockerized-expressjs-sequelize** repository! :wave: This projec
 
 Before getting started with the project, ensure that you have the following dependencies installed on your development machine:
 
-- [Node.js](https://nodejs.org/) (version X.X.X)
-- [Docker](https://www.docker.com/) (version X.X.X)
-- [PostgreSQL](https://www.postgresql.org/) (version X.X.X)
+- [Node.js](https://nodejs.org/) (v18.13.0)
+- [Docker](https://www.docker.com/) (v20.10.23)
+- [PostgreSQL](https://www.postgresql.org/) (v12.15)
 
 ## Environment Variables :key:
 
