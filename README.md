@@ -1,12 +1,12 @@
-# dockerized-expressjs-sequelize :rocket:
+# dockerized-express-sequelize :rocket:
 
-Welcome to the **dockerized-expressjs-sequelize** repository! :wave: This project is a backend application built with Node.js and Express.js. It utilizes Sequelize as the ORM (Object-Relational Mapping) tool for managing the database. The entire project is dockerized, with Docker working seamlessly with the backend container and the PostgreSQL database daemon. :whale:
+Welcome to the **dockerized-express-sequelize** repository! :wave: This project is a backend application built with Node.js and Express.js. It utilizes Sequelize as the ORM (Object-Relational Mapping) tool for managing the database. The entire project is dockerized, with Docker working seamlessly with the backend container and the PostgreSQL database daemon. :whale:
 
 ## Project Information :information_source:
 
 - Description: This project is a backend application developed in Node.js using Express.js as the framework. Sequelize is implemented as the ORM tool for efficient database management. The project is fully dockerized, with Docker managing the backend container and the PostgreSQL database daemon.
 - Technologies: Node.js, Express.js, Sequelize, Docker, PostgreSQL
-- Project Name: dockerized-expressjs-sequelize
+- Project Name: dockerized-express-sequelize
 
 ## Prerequisites :wrench:
 
