@@ -1,4 +1,4 @@
-const User = require("../models/users"); // Import the User model
+const User = require("../models/user"); // Import the User model
 
 // Get all users
 exports.getUsers = (req, res, next) => {

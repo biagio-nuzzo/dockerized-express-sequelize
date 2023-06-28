@@ -38,7 +38,7 @@ sequelize
 // Define Sequelize models
 // These models represent the database tables and their relationships
 // Sequelize uses these models to synchronize the database schema
-const User = require("./models/users");
+const User = require("./models/user");
 //////////////////////////////////////////////// END MODELS
 
 //////////////////////////////////////////////// CORS
@@ -99,5 +99,5 @@ app.get("/", (req, res, next) => {
 });
 
 //CRUD routes
-app.use("/users", require("./routes/users"));
+app.use("/users", require("./routes/user"));
 //////////////////////////////////////////////// ROUTES
