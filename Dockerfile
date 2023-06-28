@@ -12,6 +12,4 @@ RUN npm install -g sequelize-cli
 # Bundle app source
 COPY . .
 
-EXPOSE 8000
-
 CMD [ "node", "index.js" ]
