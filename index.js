@@ -20,6 +20,20 @@ app.use(express.json());
 // Sequelize is an ORM for interacting with the database
 // Use the "sequelize" object to define models and perform database operations
 const sequelize = require("./util/database");
+
+// Test the database connection
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Connected to the database!");
+    app.listen(8000, () => {
+      console.log("Server started on port 8000");
+    });
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!");
+    console.log(err);
+  });
 //////////// END DATABASE
 
 //////////// MODELS
