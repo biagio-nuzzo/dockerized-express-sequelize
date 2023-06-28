@@ -16,6 +16,19 @@ Before getting started with the project, ensure that you have the following depe
 - [Docker](https://www.docker.com/) (version X.X.X)
 - [PostgreSQL](https://www.postgresql.org/) (version X.X.X)
 
+## Environment Variables :key:
+
+The following environment variables need to be set before running the project:
+
+- `PG_DB`: The name of the PostgreSQL database.
+- `PG_USER`: The username for accessing the PostgreSQL database.
+- `PG_PASSWORD`: The password for accessing the PostgreSQL database.
+- `PG_HOST`: The hostname for the PostgreSQL database.
+- `DB_PORT`: The port number on which the PostgreSQL database is running.
+- `NODE_SERVER_PORT`: The port number on which the Node.js server should run.
+
+Make sure to set these variables with appropriate values in your environment.
+
 ## Getting Started :rocket:
 
 To get this project up and running on your local machine, follow these steps:
@@ -32,7 +45,9 @@ To get this project up and running on your local machine, follow these steps:
    cd dockerized-expressjs-sequelize
    ```
 
-3. Run the following command to set up the project:
+3. Set the required environment variables as mentioned above.
+
+4. Run the following command to set up the project:
 
    ```bash
    ./dev_stack.sh
@@ -40,13 +55,13 @@ To get this project up and running on your local machine, follow these steps:
 
    This script will handle the setup process for you.
 
-4. Once the setup is complete, you can start the backend server:
+5. Once the setup is complete, you can start the backend server:
 
    ```bash
    docker-compose up
    ```
 
-   The server should now be running on [http://localhost:3000](http://localhost:3000).
+   The server should now be running on [http://localhost:8000](http://localhost:8000).
 
 ## Usage :hammer_and_wrench:
 
