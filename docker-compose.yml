@@ -16,7 +16,7 @@ services:
       - node_db
     command: npm run start
     volumes:
-      - node_app_data:/usr/src/app/
+      - ./src:/usr/src/app/src
 
 
   node_db:
