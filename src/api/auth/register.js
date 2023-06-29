@@ -1,37 +1,52 @@
 const User = require("../../models/user"); // Import the User model
+const { Op } = require("sequelize"); // Import the Op module for using comparison operators
+const { hashPassword } = require("./utils/password"); // Import the hashPassword function from the password.js file
 
 // Define a route for registering a new user
 // The route URL is http://localhost:8000/api/auth/register
 // The HTTP method is POST
-exports.register = (req, res, next) => {
+exports.register = async (req, res, next) => {
   // Extract the data from the request body
   const { username, email, password } = req.body;
 
-  // check if the user already exists
-  User.findOne({ where: { email: email } })
-    .then((user) => {
-      if (user) {
-        // If user already exists, respond with an error message
-        return res.status(400).json({ message: "User already exists!" });
-      }
-    })
-    .catch((err) => console.log(err)); // Log any errors
+  // Check if user already exists by username or email
+  const alreadyExistsUser = await User.findOne({
+    where: {
+      [Op.or]: [{ username: username }, { email: email }],
+    },
+  }).catch((err) => {
+    console.log(err); // Log any errors
+  });
 
-  // Create a new user in the database with the provided data
-  User.create({
+  if (alreadyExistsUser) {
+    return res.status(400).json({
+      error: "User with same username or email already exists",
+    });
+  }
+
+  const hashedPassword = await hashPassword(password);
+
+  // Create a new user with the password hash
+  const newUser = new User({
     username: username,
     email: email,
-    password: password,
-  })
-    .then((result) => {
-      console.log("Created User");
-      res.status(201).json({
-        // Respond with a success message and the created user in JSON format
-        message: "User created successfully!",
-        user: result,
-      });
-    })
-    .catch((err) => {
-      console.log(err); // Log any errors
+    password: hashedPassword,
+  });
+
+  // Save the user details to the database
+  const savedUser = await newUser.save().catch((err) => {
+    console.log(err); // Log any errors
+    res.status(500).json({
+      error: "Couldn't save the user",
     });
+  });
+
+  if (savedUser) {
+    savedUser.password = undefined;
+    // Send the response to the user with the access token and user details
+    res.status(201).json({
+      message: "User saved successfully",
+      user: savedUser,
+    });
+  }
 };
