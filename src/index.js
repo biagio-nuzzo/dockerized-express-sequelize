@@ -16,6 +16,12 @@ const app = express();
 app.use(express.json());
 //////////////////////////////////////////////// END EXPRESS
 
+//////////////////////////////////////////////// PASSPORT
+// Passport.js is an authentication middleware for Node.js
+// It is used to authenticate requests, which it does through an extensible set of plugins known as strategies
+// See http://www.passportjs.org/docs/
+require("./api/auth/utils/passport");
+
 //////////////////////////////////////////////// DATABASE
 // Sequelize is an ORM for interacting with the database
 // Use the "sequelize" object to define models and perform database operations
