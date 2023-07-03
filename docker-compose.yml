@@ -18,6 +18,7 @@ services:
     command: npm run start
     volumes:
       - ./src:/usr/src/app/src
+      - .sequelizerc:/usr/src/app/.sequelizerc
 
 
   node_db:
@@ -33,6 +34,4 @@ services:
       - node_db_data:/var/lib/postgresql/data
 
 volumes:
-  # node_app data
-  node_app_data: {}
   node_db_data: {}
