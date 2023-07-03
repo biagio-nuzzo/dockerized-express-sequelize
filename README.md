@@ -47,13 +47,13 @@ To get this project up and running on your local machine, follow these steps:
 
 3. Set the required environment variables as mentioned above.
    ```base
-   mv sample.env .env
+   cp sample.env .env
    ```
 
 5. Run the following command to set up the project:
 
    ```bash
-   ./dev_stack.sh
+   ./dev_start.sh
    ```
 
    This script will handle the setup process for you.
